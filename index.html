@@ -28,33 +28,65 @@
   <meta name="twitter:image" content="https://poputka.md/android-chrome-512x512.png">
 
   <style>
-    :root { --fg:#0f172a; --muted:#475569; --bg:#f8fafc; --card:#ffffff; --brand:#ef4444; }
-    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto}
+    :root{
+      --fg:#0f172a; --muted:#475569; --bg:#f8fafc; --card:#ffffff;
+      --brand:#ef4444; --border:#e2e8f0; --chip:#cbd5e1;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto}
     .wrap{max-width:980px;margin:0 auto;padding:48px 20px}
     .card{background:var(--card);border-radius:20px;box-shadow:0 10px 30px rgba(2,6,23,.08);padding:32px}
-    h1{font-size:40px;margin:0} p{margin:0 0 14px;color:var(--muted)}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
-    .box{background:#f1f5f9;border-radius:14px;padding:16px}
-    .cta{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;border:1px solid #e2e8f0}
-    .primary{background:var(--brand);color:#fff;border:none}
+    h1{font-size:40px;margin:0}
+    p{margin:0 0 14px;color:var(--muted)}
+
+    /* HERO */
     .hero{display:flex;align-items:center;gap:12px;margin-bottom:10px}
     .hero img{width:36px;height:36px;border-radius:8px}
+
+    /* ACTION buttons — full-width blocks ca și cardurile */
+    .actions{display:grid;grid-template-columns:1fr;gap:14px;margin:16px 0 8px}
+    .btn{
+      display:flex;align-items:center;justify-content:center;gap:10px;
+      width:100%; padding:16px 18px; border-radius:14px; text-decoration:none;
+      border:1px solid var(--border); background:#f1f5f9; color:var(--fg);
+      font-weight:600; box-shadow:0 2px 6px rgba(2,6,23,.04);
+    }
+    .btn.primary{background:var(--brand); color:#fff; border:none}
+    .btn:hover{filter:brightness(0.98)}
+
+    /* GRID for two info cards */
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
+    .box{background:#f1f5f9;border-radius:14px;padding:16px}
+
+    /* ROADMAP */
     .road{margin-top:28px}
     .road ul{margin:8px 0 0 0;padding:0;list-style:none}
-    .road li{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin-top:10px;display:flex;justify-content:space-between;gap:12px}
-    .tag{font-size:12px;color:#0f172a;background:#e2e8f0;border-radius:999px;padding:2px 8px}
+    .road li{
+      background:#ffffff;border:1px solid var(--border);
+      border-radius:14px;padding:14px 16px;margin-top:12px;
+      display:flex;justify-content:space-between;gap:12px;align-items:center;
+    }
+    /* Etichete tip "pill" subtile, fara disc gri */
+    .tag{
+      font-size:12px;color:#0f172a;background:transparent;
+      border:1px solid var(--chip); border-radius:999px; padding:4px 10px;
+      white-space:nowrap;
+    }
+
+    .contact{margin-top:20px}
+
     footer{margin-top:24px;color:var(--muted);font-size:14px}
-    @media (max-width:760px){ .row{grid-template-columns:1fr} }
+
+    /* MOBILE */
+    @media (max-width:760px){
+      .row{grid-template-columns:1fr}
+      h1{font-size:36px}
+      .actions{grid-template-columns:1fr} /* butoane raman full-width */
+    }
   </style>
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Poputka.md",
-    "url": "https://poputka.md/",
-    "description": "Platformă de carpooling pentru Moldova."
-  }
+  {"@context":"https://schema.org","@type":"WebSite","name":"Poputka.md","url":"https://poputka.md/","description":"Platformă de carpooling pentru Moldova."}
   </script>
 </head>
 <body>
@@ -66,14 +98,15 @@
       </div>
       <p>Platformă de carpooling pentru Moldova. Conectăm șoferi și pasageri, în siguranță, simplu și rapid.</p>
 
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 6px">
-        <!-- Buton înscriere: email precompletat -->
-        <a class="cta primary"
+      <!-- BUTOANE: full-width, egale cu cardurile -->
+      <div class="actions">
+        <a class="btn primary"
            href="mailto:vodnicear@gmail.com?subject=Abonare%20nout%C4%83%C8%9Bi%20Poputka.md&body=Salut!%20Vreau%20s%C4%83%20primesc%20nout%C4%83%C8%9Bi%20despre%20Poputka.md.%20Nume%3A%20_____%20%0AEmail%3A%20_____">
-           Înscrie-te pentru noutăți
+          Înscrie-te pentru noutăți
         </a>
-        <!-- Feedback public pe repo-ul de landing (este public) -->
-        <a class="cta" href="https://github.com/LEOVODNICEAR/poputka-landing/issues/new" target="_blank" rel="noopener">Lasă feedback pe GitHub</a>
+        <a class="btn" href="https://github.com/LEOVODNICEAR/poputka-landing/issues/new" target="_blank" rel="noopener">
+          Lasă feedback pe GitHub
+        </a>
       </div>
 
       <div class="row">
@@ -99,7 +132,7 @@
         </ul>
       </div>
 
-      <div class="box" style="margin-top:20px">
+      <div class="box contact">
         <strong>Contact</strong>
         <p>Scrie-mi direct la <a href="mailto:vodnicear@gmail.com">vodnicear@gmail.com</a>
         sau deschide un <a href="https://github.com/LEOVODNICEAR/poputka-landing/issues/new" target="_blank" rel="noopener">issue</a> public.</p>
