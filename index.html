@@ -2,41 +2,80 @@
 <html lang="ro">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
   <title>Poputka.md — carpooling în Moldova</title>
+  <meta name="description" content="Poputka.md conectează șoferii care au locuri libere cu pasagerii care caută o rută. Simplu, rapid și sigur.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://poputka.md/">
+
+  <!-- Favicon & PWA (ai fișierele deja în repo) -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://poputka.md/">
   <meta property="og:title" content="Poputka.md — carpooling în Moldova">
   <meta property="og:description" content="Conectăm șoferi și pasageri, în siguranță, simplu și rapid.">
-  <meta property="og:image" content="/android-chrome-512x512.png">
+  <meta property="og:image" content="https://poputka.md/android-chrome-512x512.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Poputka.md conectează șoferii care au locuri libere cu pasagerii care caută o rută. Aplicație în dezvoltare.">
+  <meta name="twitter:title" content="Poputka.md — carpooling în Moldova">
+  <meta name="twitter:description" content="Conectăm șoferi și pasageri, în siguranță, simplu și rapid.">
+  <meta name="twitter:image" content="https://poputka.md/android-chrome-512x512.png">
+
+  <!-- Minimal CSS -->
   <style>
-    :root { --fg:#0f172a; --muted:#475569; --bg:#f8fafc; --card:#ffffff; }
-    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu}
-    .wrap{max-width:900px;margin:0 auto;padding:48px 20px}
-    .card{background:var(--card);border-radius:20px;box-shadow:0 10px 30px rgba(2,6,23,.08);padding:36px}
-    h1{font-size:40px;margin:0 0 8px} p{margin:0 0 16px;color:var(--muted)}
-    .cta{display:inline-block;margin-top:12px;padding:12px 18px;border-radius:12px;text-decoration:none;border:1px solid #e2e8f0}
-    .row{display:flex;gap:24px;flex-wrap:wrap;margin-top:24px}
-    .box{flex:1 1 260px;background:#f1f5f9;border-radius:14px;padding:16px}
-    code{background:#e2e8f0;border-radius:6px;padding:2px 6px}
-    footer{margin-top:32px;color:var(--muted);font-size:14px}
+    :root { --fg:#0f172a; --muted:#475569; --bg:#f8fafc; --card:#ffffff; --brand:#ef4444; }
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto}
+    .wrap{max-width:980px;margin:0 auto;padding:48px 20px}
+    .card{background:var(--card);border-radius:20px;box-shadow:0 10px 30px rgba(2,6,23,.08);padding:32px}
+    h1{font-size:40px;margin:0} p{margin:0 0 14px;color:var(--muted)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
+    .box{background:#f1f5f9;border-radius:14px;padding:16px}
+    .cta{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;border:1px solid #e2e8f0}
+    .primary{background:var(--brand);color:#fff;border:none}
+    .hero{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+    .hero img{width:36px;height:36px;border-radius:8px}
+    .road{margin-top:28px}
+    .road ul{margin:8px 0 0 0;padding:0;list-style:none}
+    .road li{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:10px 12px;margin-top:10px;display:flex;justify-content:space-between;gap:12px}
+    .tag{font-size:12px;color:#0f172a;background:#e2e8f0;border-radius:999px;padding:2px 8px}
+    footer{margin-top:24px;color:var(--muted);font-size:14px}
+    @media (max-width:760px){ .row{grid-template-columns:1fr} }
   </style>
+
+  <!-- Schema.org JSON-LD (opțional, ajută SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Poputka.md",
+    "url": "https://poputka.md/",
+    "description": "Platformă de carpooling pentru Moldova."
+  }
+  </script>
 </head>
 <body>
   <div class="wrap">
     <div class="card">
-      <div style="display:flex;align-items:center;gap:12px">
-      <img src="/android-chrome-192x192.png" alt="Poputka logo" width="36" height="36" style="border-radius:8px">
-      <h1 style="margin:0">Poputka.md</h1>
+      <div class="hero">
+        <img src="/android-chrome-192x192.png" alt="Poputka logo" width="36" height="36">
+        <h1>Poputka.md</h1>
       </div>
       <p>Platformă de carpooling pentru Moldova. Conectăm șoferi și pasageri, în siguranță, simplu și rapid.</p>
-      <a class="cta" href="https://github.com/LEOVODNICEAR/poputka" target="_blank" rel="noopener">Vezi repo-ul aplicației</a>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 6px">
+        <a class="cta" href="https://github.com/LEOVODNICEAR/poputka" target="_blank" rel="noopener">Vezi repo-ul aplicației</a>
+        <!-- Înlocuiește linkul cu formularul tău Google/Mailchimp -->
+        <a class="cta primary" href="https://forms.gle/EXEMPLU-form" target="_blank" rel="noopener">Înscrie-te pentru noutăți</a>
+      </div>
+
       <div class="row">
         <div class="box">
           <strong>Status</strong>
@@ -46,11 +85,25 @@
           <strong>Obiectiv</strong>
           <p>Rute postate de șoferi, căutare pe hartă, rezervări, recenzii și un Centru de Siguranță.</p>
         </div>
-        <div class="box">
-          <strong>Contact</strong>
-          <p>Propuneri sau colaborări? Deschide un <code>discussion</code> sau <code>issue</code> pe GitHub.</p>
-        </div>
       </div>
+
+      <div class="road">
+        <strong>Ce urmează (Roadmap)</strong>
+        <ul>
+          <li><span>Autentificare web (Breeze) + API tokens (Sanctum)</span> <span class="tag">în lucru</span></li>
+          <li><span>Harta cu locuri & rute (Leaflet + PostGIS)</span> <span class="tag">în lucru</span></li>
+          <li><span>Rezervări & mesagerie între șofer și pasager</span> <span class="tag">următor</span></li>
+          <li><span>Recenzii & sistem de reputație</span> <span class="tag">planificat</span></li>
+          <li><span>„Centrul de Siguranță” (verificări, raportări, reguli)</span> <span class="tag">planificat</span></li>
+          <li><span>Aplicație mobilă (API comun)</span> <span class="tag">planificat</span></li>
+        </ul>
+      </div>
+
+      <div class="box" style="margin-top:20px">
+        <strong>Contact</strong>
+        <p>Propuneri sau colaborări? Deschide un <a href="https://github.com/LEOVODNICEAR/poputka/discussions" target="_blank" rel="noopener">discussion</a> sau <a href="https://github.com/LEOVODNICEAR/poputka/issues/new" target="_blank" rel="noopener">issue</a> pe GitHub.</p>
+      </div>
+
       <footer>© 2025 Poputka.md</footer>
     </div>
   </div>
