@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://poputka.md/sitemap.xml
