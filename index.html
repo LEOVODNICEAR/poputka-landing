@@ -16,20 +16,19 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#ffffff">
 
-  <!-- Open Graph / Twitter -->
+  <!-- Open Graph / Twitter (aliniate cu titlu/descriere) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://poputka.md/">
-  <meta property="og:title" content="Poputka.md — carpooling în Moldova">
-  <meta property="og:description" content="Conectăm șoferi și pasageri, în siguranță, simplu și rapid.">
+  <meta property="og:title" content="Poputka.md — Carpooling în Moldova: conectăm șoferi și pasageri">
+  <meta property="og:description" content="Poputka.md este platforma de carpooling din Moldova. Conectăm șoferii care au locuri libere cu pasagerii care caută rute ieftine și rapide. Simplu, sigur și original.">
   <meta property="og:image" content="https://poputka.md/android-chrome-512x512.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Poputka.md — carpooling în Moldova">
-  <meta name="twitter:description" content="Conectăm șoferi și pasageri, în siguranță, simplu și rapid.">
+  <meta name="twitter:title" content="Poputka.md — Carpooling în Moldova: conectăm șoferi și pasageri">
+  <meta name="twitter:description" content="Poputka.md este platforma de carpooling din Moldova. Conectăm șoferii care au locuri libere cu pasagerii care caută rute ieftine și rapide. Simplu, sigur și original.">
   <meta name="twitter:image" content="https://poputka.md/android-chrome-512x512.png">
 
-  <!-- BEGIN ADSENSE loader -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6861206389335484"
-     crossorigin="anonymous"></script>
+  <!-- BEGIN ADSENSE loader (unic în <head>) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6861206389335484" crossorigin="anonymous"></script>
   <!-- END ADSENSE loader -->
 
   <style>
@@ -40,6 +39,7 @@
     .wrap{max-width:980px;margin:0 auto;padding:48px 20px}
     .card{background:var(--card);border-radius:20px;box-shadow:0 10px 30px rgba(2,6,23,.08);padding:32px}
     h1{font-size:40px;margin:0}
+    h2{font-size:22px;margin:22px 0 8px}
     p{margin:0 0 14px;color:var(--muted)}
     .hero{display:flex;align-items:center;gap:12px;margin-bottom:10px}
     .hero img{width:36px;height:36px;border-radius:8px}
@@ -65,30 +65,32 @@
     @media (max-width:760px){ .row{grid-template-columns:1fr} h1{font-size:36px} .actions{grid-template-columns:1fr} }
   </style>
 
+  <!-- Structured data: Website -->
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebSite","name":"Poputka.md","url":"https://poputka.md/","description":"Platformă de carpooling pentru Moldova."}
   </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "Cum funcționează Poputka.md?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Șoferii postează locurile libere, pasagerii caută ruta dorită, iar aplicația îi conectează instant."
-    }
-  }]
-}
-</script>
 
+  <!-- Structured data: FAQPage (1 Q/A) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "Cum funcționează Poputka.md?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Șoferii postează locurile libere, pasagerii caută ruta dorită, iar aplicația îi conectează instant."
+      }
+    }]
+  }
+  </script>
 </head>
 <body>
   <div class="wrap">
     <div class="card">
       <div class="hero">
-        <img src="/android-chrome-192x192.png" alt="Poputka logo" width="36" height="36">
+        <img src="/android-chrome-192x192.png" alt="Poputka logo" width="36" height="36" loading="lazy">
         <h1>Poputka.md</h1>
       </div>
       <p>Poputka.md este prima platformă de carpooling din Moldova. Ajutăm șoferii care au locuri libere să găsească pasageri, iar pasagerii să găsească transport rapid și ieftin. Economisești bani, reduci poluarea și călătorești în siguranță.</p>
@@ -108,8 +110,8 @@
       <div class="ad-card" aria-label="Reclamă">
         <ins class="adsbygoogle ad-wrap"
              style="display:block"
-             data-ad-client="ca-pub-XXXX"
-             data-ad-slot="YYYY"
+             data-ad-client="ca-pub-6861206389335484"
+             data-ad-slot="REPLACE_WITH_YOUR_SLOT"
              data-ad-format="auto"
              data-full-width-responsive="true"
              data-adtest="on"></ins>
@@ -119,29 +121,17 @@
 
       <div class="row">
         <div class="box">
-          <strong>Status</strong>
+          <h2>Status aplicație</h2>
           <p>Aplicația este în dezvoltare activă (Laravel 12, PostgreSQL + PostGIS, Docker).</p>
-          <!-- (Opțional) al doilea bloc Ads în „Status”
-          <div class="ad-card" aria-label="Reclamă">
-            <ins class="adsbygoogle ad-wrap"
-                 style="display:block"
-                 data-ad-client="ca-pub-XXXX"
-                 data-ad-slot="ZZZZ"
-                 data-ad-format="rectangle"
-                 data-full-width-responsive="true"
-                 data-adtest="on"></ins>
-          </div>
-          <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-          -->
         </div>
         <div class="box">
-          <strong>Obiectiv</strong>
+          <h2>Obiectiv</h2>
           <p>Misiunea noastră este să reinventăm modul în care oamenii călătoresc împreună: să oferim o platformă prin care un pasager să poată fi conectat instant cu o mașină care merge în direcția lui, indiferent dacă se află într-un oraș sau pe marginea drumului. Simplu, original și sigur.</p>
         </div>
       </div>
 
       <div class="road">
-        <strong>Ce urmează (Roadmap)</strong>
+        <h2>Ce urmează (Roadmap)</h2>
         <ul>
           <li><span>Autentificare web (Breeze) + API tokens (Sanctum)</span> <span class="tag">în lucru</span></li>
           <li><span>Harta cu locuri & rute (Leaflet + PostGIS)</span> <span class="tag">în lucru</span></li>
@@ -153,16 +143,15 @@
       </div>
 
       <div class="box contact">
-        <strong>Contact</strong>
+        <h2>Contact</h2>
         <p>Scrie-mi direct la <a href="mailto:vodnicear@gmail.com">vodnicear@gmail.com</a>
         sau deschide un <a href="https://github.com/LEOVODNICEAR/poputka-landing/issues/new" target="_blank" rel="noopener">issue</a> public.</p>
       </div>
 
       <footer>
-        © 2025 Poputka.md — <a href="https://www.facebook.com/poputka.md">Facebook</a> | 
+        © 2025 Poputka.md — <a href="https://www.facebook.com/poputka.md">Facebook</a> |
         <a href="https://github.com/LEOVODNICEAR/poputka-landing">GitHub</a>
       </footer>
-
     </div>
   </div>
 </body>
