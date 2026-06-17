@@ -95,6 +95,7 @@ main,
   gap: 36px;
   align-items: center;
   padding: 48px 0 80px;
+  overflow: hidden;
 }
 
 .hero-content {
@@ -174,13 +175,9 @@ h1 {
 
 .mobility-visual {
   width: 100%;
-  max-width: 620px;
+  max-width: 760px;
   margin: 0 auto;
-  border: 1px solid rgba(220, 228, 238, 0.85);
-  border-radius: 28px;
-  background: linear-gradient(180deg, #ffffff, #f6f9fc);
-  box-shadow: var(--shadow);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .mobility-visual svg {
@@ -189,41 +186,126 @@ h1 {
   height: auto;
 }
 
-.map-shape {
-  fill: #edf4ff;
+.sun {
+  fill: #f8d98a;
+  opacity: 0.36;
 }
 
-.route-shadow {
+.cloud {
+  fill: #c8def3;
+  opacity: 0.24;
+}
+
+.bird {
   fill: none;
-  opacity: 0.04;
-  stroke: var(--blue);
+  opacity: 0.38;
+  stroke: #7aa7d9;
   stroke-linecap: round;
-  stroke-width: 28;
+  stroke-width: 3;
+}
+
+.city {
+  fill: #9ebce1;
+  opacity: 0.48;
+}
+
+.hill-back {
+  fill: #edf5fb;
+}
+
+.hill-mid {
+  fill: #dcecf3;
+  opacity: 0.7;
+}
+
+.hill-front {
+  fill: #d3e8e8;
+  opacity: 0.78;
+}
+
+.road-outer {
+  fill: #eef6fb;
+  opacity: 0.92;
+}
+
+.road-edge,
+.lane-line {
+  fill: none;
+  opacity: 0.48;
+  stroke: #ffffff;
+  stroke-linecap: round;
+  stroke-width: 8;
+}
+
+.lane-line {
+  opacity: 0.72;
+  stroke-dasharray: 30 34;
+  stroke-width: 9;
 }
 
 .route-line {
   fill: none;
-  opacity: 0.16;
+  opacity: 0.12;
   stroke: var(--blue);
   stroke-linecap: round;
+  stroke-width: 3;
+  stroke-dasharray: 7 40;
+}
+
+.trees-left,
+.trees-right {
+  fill: none;
+  opacity: 0.55;
+  stroke: #93cdb5;
+  stroke-linecap: round;
   stroke-width: 4;
-  stroke-dasharray: 8 34;
+}
+
+.trees-left circle,
+.trees-right circle {
+  fill: #a8dbc1;
+  stroke: none;
+}
+
+.pin-shadow {
+  fill: #2457d6;
+  opacity: 0.13;
+}
+
+.pin-shadow-secondary,
+.pin-shadow-distant {
+  fill: var(--green);
+}
+
+.pin-shadow-city {
+  fill: var(--blue);
+  opacity: 0.11;
 }
 
 .hero-pin {
-  fill: var(--surface);
-  stroke-width: 8;
   transform-box: fill-box;
   transform-origin: center;
 }
 
-.pin-primary,
-.pin-distant {
-  stroke: var(--blue);
+.pin-shape {
+  fill: var(--blue);
+  filter: drop-shadow(0 12px 18px rgba(36, 87, 214, 0.2));
 }
 
-.pin-secondary {
-  stroke: var(--green);
+.pin-secondary .pin-shape,
+.pin-distant .pin-shape {
+  fill: var(--green);
+  filter: drop-shadow(0 10px 16px rgba(24, 167, 122, 0.18));
+}
+
+.pin-city .pin-shape {
+  fill: var(--blue);
+  opacity: 0.9;
+}
+
+.pin-hole {
+  fill: #ffffff;
+  opacity: 0.96;
 }
 
 .pin-primary {
@@ -238,13 +320,50 @@ h1 {
   animation: pinDistantFloat 6s ease-in-out infinite;
 }
 
-.car rect,
-.car path {
-  fill: var(--text);
+.car-shadow {
+  fill: #8fa8c5;
+  opacity: 0.2;
 }
 
-.car circle {
-  fill: var(--green);
+.car-body {
+  stroke: #8fa6bf;
+  stroke-width: 2;
+}
+
+.car-window {
+  fill: #0b1a32;
+  opacity: 0.9;
+}
+
+.car-glass {
+  fill: none;
+  opacity: 0.45;
+  stroke: #ffffff;
+  stroke-linecap: round;
+  stroke-width: 3;
+}
+
+.tail-light {
+  fill: none;
+  stroke: #ef5b75;
+  stroke-linecap: round;
+  stroke-width: 5;
+}
+
+.plate {
+  fill: #dce8f5;
+}
+
+.wheel {
+  fill: #0b1220;
+}
+
+.glow {
+  opacity: 0.72;
+}
+
+.car {
+  filter: drop-shadow(0 22px 28px rgba(55, 82, 112, 0.2));
 }
 
 .section,
@@ -441,8 +560,13 @@ h3 {
 
 @media (min-width: 860px) {
   .hero {
-    grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
-    gap: 54px;
+    grid-template-columns: minmax(0, 0.86fr) minmax(480px, 1.14fr);
+    gap: 28px;
+  }
+
+  .mobility-visual {
+    width: min(64vw, 820px);
+    margin-right: max(-7vw, -90px);
   }
 
   .cards {
@@ -467,7 +591,8 @@ h3 {
   }
 
   .mobility-visual {
-    border-radius: 22px;
+    max-width: 100%;
+    margin-top: 6px;
   }
 
   .section,

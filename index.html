@@ -57,21 +57,121 @@
         </div>
       </div>
 
-      <div class="mobility-visual" aria-label="Abstract route across Moldova">
-        <svg viewBox="0 0 560 420" role="img" aria-labelledby="visual-title visual-desc" xmlns="http://www.w3.org/2000/svg">
-          <title id="visual-title">Minimal route illustration</title>
-          <desc id="visual-desc">A calm abstract road with connected locations and a small car.</desc>
-          <path class="map-shape" d="M348 38c55 23 97 71 113 132 18 67-2 139-50 187-45 45-111 60-174 50-68-11-128-48-153-108-25-59-13-134 28-183 54-65 154-111 236-78Z"/>
-          <path class="route-shadow" d="M91 297c67-95 140-142 218-139 62 3 111 36 166 92"/>
-          <path class="route-line" d="M91 297c67-95 140-142 218-139 62 3 111 36 166 92"/>
-          <circle class="hero-pin pin-primary" cx="91" cy="297" r="10"/>
-          <circle class="hero-pin pin-secondary" cx="309" cy="158" r="10"/>
-          <circle class="hero-pin pin-distant" cx="475" cy="250" r="10"/>
-          <g class="car" transform="translate(250 137)">
-            <rect x="0" y="28" width="82" height="30" rx="15"/>
-            <path d="M18 31l13-18h27l15 18H18Z"/>
-            <circle cx="22" cy="61" r="8"/>
-            <circle cx="61" cy="61" r="8"/>
+      <div class="mobility-visual" aria-label="Road scene across Moldova">
+        <svg viewBox="0 0 980 680" role="img" aria-labelledby="visual-title visual-desc" xmlns="http://www.w3.org/2000/svg">
+          <title id="visual-title">Road scene illustration</title>
+          <desc id="visual-desc">A wide pastel landscape with a winding road, car, location pins, distant city, hills, sun and clouds.</desc>
+          <defs>
+            <linearGradient id="roadGradient" x1="0%" y1="100%" x2="88%" y2="12%">
+              <stop offset="0%" stop-color="#d8e6f5"/>
+              <stop offset="55%" stop-color="#c9d9e9"/>
+              <stop offset="100%" stop-color="#eef5fb"/>
+            </linearGradient>
+            <linearGradient id="carBody" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#c5d6e8"/>
+            </linearGradient>
+            <radialGradient id="softGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <circle class="sun" cx="720" cy="94" r="22"/>
+          <g class="cloud cloud-a">
+            <ellipse cx="210" cy="95" rx="42" ry="9"/>
+            <circle cx="196" cy="91" r="15"/>
+            <circle cx="222" cy="84" r="20"/>
+            <circle cx="248" cy="94" r="12"/>
+          </g>
+          <g class="cloud cloud-b">
+            <ellipse cx="838" cy="72" rx="38" ry="8"/>
+            <circle cx="823" cy="67" r="12"/>
+            <circle cx="846" cy="61" r="18"/>
+            <circle cx="866" cy="71" r="10"/>
+          </g>
+          <path class="bird" d="M626 76c7-6 15-6 22 0m8 10c7-5 14-5 21 0"/>
+
+          <g class="city">
+            <rect x="738" y="176" width="22" height="72" rx="2"/>
+            <rect x="770" y="142" width="28" height="106" rx="2"/>
+            <path d="M784 112l5 30h-10l5-30Z"/>
+            <rect x="808" y="164" width="24" height="84" rx="2"/>
+            <rect x="842" y="188" width="32" height="60" rx="2"/>
+            <rect x="884" y="152" width="26" height="96" rx="2"/>
+            <path d="M897 124l4 28h-8l4-28Z"/>
+            <rect x="920" y="202" width="28" height="46" rx="2"/>
+          </g>
+
+          <path class="hill hill-back" d="M74 294c98-74 178-80 240-38 76 52 132 21 194-4 88-35 166 1 226 42 62 42 129 25 206 0v126H74Z"/>
+          <path class="hill hill-mid" d="M0 390c74-62 147-76 219-43 76 35 129 23 190-18 79-54 150-39 224 24 72 61 155 43 258 0 37-15 67-22 89-23v156H0Z"/>
+          <path class="hill hill-front" d="M0 508c82-54 156-61 222-21 70 43 135 43 197-4 68-51 143-51 226 0 78 48 156 47 235-3 39-25 72-37 100-36v236H0Z"/>
+          <circle class="glow glow-a" fill="url(#softGlow)" cx="384" cy="346" r="150"/>
+          <circle class="glow glow-b" fill="url(#softGlow)" cx="690" cy="338" r="190"/>
+
+          <path class="road-outer" d="M232 680c-8-116 53-205 183-267 82-40 143-76 148-120 6-48-44-74-108-82-38-5-49-28-18-43 93-45 244-2 286 77 34 64 14 127-61 184-53 40-75 79-64 125 9 39 42 81 93 126H232Z"/>
+          <path class="road-inner" fill="url(#roadGradient)" d="M348 680c-28-102 5-172 101-223 91-48 180-97 186-164 5-58-43-102-132-118 68-8 143 14 184 61 51 59 37 124-43 187-78 62-89 131-16 257H348Z"/>
+          <path class="road-edge edge-left" d="M274 679c-21-93 24-180 143-239 105-51 182-103 184-157"/>
+          <path class="road-edge edge-right" d="M632 680c-75-123-64-192 29-260 77-56 92-116 45-173"/>
+          <path class="lane-line" d="M460 664c-39-77-10-136 83-179 92-43 143-101 121-151"/>
+
+          <path class="route-line" d="M188 503c78-108 145-167 202-177 88-15 154-70 198-159 32-65 86-92 162-81"/>
+
+          <g class="trees trees-left">
+            <path d="M112 490c0-35 13-62 29-62s29 27 29 62c0 26-14 40-29 50-15-10-29-24-29-50Z"/>
+            <path d="M142 542v-52"/>
+            <circle cx="92" cy="548" r="12"/>
+            <circle cx="113" cy="538" r="16"/>
+            <circle cx="132" cy="550" r="11"/>
+          </g>
+          <g class="trees trees-right">
+            <path d="M865 430c0-31 11-54 25-54s25 23 25 54c0 23-12 35-25 44-13-9-25-21-25-44Z"/>
+            <path d="M890 476v-46"/>
+            <circle cx="812" cy="525" r="11"/>
+            <circle cx="835" cy="512" r="15"/>
+            <circle cx="858" cy="525" r="10"/>
+          </g>
+
+          <ellipse class="pin-shadow" cx="210" cy="494" rx="38" ry="10"/>
+          <ellipse class="pin-shadow pin-shadow-secondary" cx="638" cy="335" rx="28" ry="8"/>
+          <ellipse class="pin-shadow pin-shadow-distant" cx="396" cy="264" rx="18" ry="5"/>
+          <ellipse class="pin-shadow pin-shadow-city" cx="775" cy="206" rx="22" ry="6"/>
+
+          <g class="hero-pin pin-primary">
+            <g transform="translate(210 430)">
+              <path class="pin-shape" d="M0-58c31 0 56 24 56 54 0 42-56 92-56 92S-56 38-56-4c0-30 25-54 56-54Z"/>
+              <circle class="pin-hole" cx="0" cy="-5" r="18"/>
+            </g>
+          </g>
+          <g class="hero-pin pin-secondary">
+            <g transform="translate(638 288)">
+              <path class="pin-shape" d="M0-36c20 0 36 16 36 35 0 27-36 59-36 59S-36 26-36-1c0-19 16-35 36-35Z"/>
+              <circle class="pin-hole" cx="0" cy="-2" r="11"/>
+            </g>
+          </g>
+          <g class="hero-pin pin-distant">
+            <g transform="translate(396 235)">
+              <path class="pin-shape" d="M0-24c14 0 24 10 24 23 0 18-24 40-24 40S-24 17-24-1c0-13 10-23 24-23Z"/>
+              <circle class="pin-hole" cx="0" cy="-1" r="7"/>
+            </g>
+          </g>
+          <g class="hero-pin pin-distant pin-city">
+            <g transform="translate(775 174)">
+              <path class="pin-shape" d="M0-28c16 0 28 12 28 27 0 21-28 46-28 46S-28 20-28-1c0-15 12-27 28-27Z"/>
+              <circle class="pin-hole" cx="0" cy="-1" r="8"/>
+            </g>
+          </g>
+
+          <g class="car" transform="translate(495 473)">
+            <ellipse class="car-shadow" cx="62" cy="82" rx="86" ry="18"/>
+            <path class="car-body" fill="url(#carBody)" d="M18 24c8-29 26-48 55-54 38-8 82 8 104 42 10 16 17 42 18 76-21 15-50 24-87 26-43 2-78-5-103-22 1-28 5-51 13-68Z"/>
+            <path class="car-window" d="M49 10c8-21 23-32 47-33 24-1 45 10 64 33-33 9-70 9-111 0Z"/>
+            <path class="car-glass" d="M56 15c31 8 62 8 94 0"/>
+            <path class="tail-light left" d="M22 55c18 7 34 8 48 4"/>
+            <path class="tail-light right" d="M130 60c18 1 34-3 50-12"/>
+            <rect class="plate" x="79" y="66" width="38" height="10" rx="4"/>
+            <circle class="wheel wheel-left" cx="44" cy="101" r="16"/>
+            <circle class="wheel wheel-right" cx="160" cy="98" r="16"/>
           </g>
         </svg>
       </div>
