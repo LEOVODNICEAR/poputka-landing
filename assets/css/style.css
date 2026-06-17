@@ -195,32 +195,47 @@ h1 {
 
 .route-shadow {
   fill: none;
-  stroke: rgba(36, 87, 214, 0.12);
+  opacity: 0.04;
+  stroke: var(--blue);
   stroke-linecap: round;
   stroke-width: 28;
 }
 
-.route {
+.route-line {
   fill: none;
+  opacity: 0.16;
   stroke: var(--blue);
   stroke-linecap: round;
-  stroke-width: 8;
-  stroke-dasharray: 18 18;
-  animation: routeMove 18s linear infinite;
+  stroke-width: 4;
+  stroke-dasharray: 8 34;
 }
 
-.pin {
+.hero-pin {
   fill: var(--surface);
   stroke-width: 8;
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
-.pin-a,
-.pin-c {
+.pin-primary,
+.pin-distant {
   stroke: var(--blue);
 }
 
-.pin-b {
+.pin-secondary {
   stroke: var(--green);
+}
+
+.pin-primary {
+  animation: pinPrimaryFloat 2.5s ease-in-out infinite;
+}
+
+.pin-secondary {
+  animation: pinSecondaryFloat 3.5s ease-in-out infinite;
+}
+
+.pin-distant {
+  animation: pinDistantFloat 6s ease-in-out infinite;
 }
 
 .car rect,
@@ -359,9 +374,36 @@ h3 {
   text-decoration: none;
 }
 
-@keyframes routeMove {
-  to {
-    stroke-dashoffset: -72;
+@keyframes pinPrimaryFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pinSecondaryFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pinDistantFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
   }
 }
 
@@ -377,6 +419,13 @@ h3 {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .hero-pin,
+  .pin-primary,
+  .pin-secondary,
+  .pin-distant {
+    animation: none !important;
   }
 }
 
