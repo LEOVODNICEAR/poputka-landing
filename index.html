@@ -1,151 +1,141 @@
 <!doctype html>
-<html lang="ro">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <title>Poputka.md — Carpooling în Moldova: conectăm șoferi și pasageri</title>
-  <meta name="description" content="Poputka.md este platforma de carpooling din Moldova. Conectăm șoferii care au locuri libere cu pasagerii care caută rute ieftine și rapide. Simplu, sigur și original.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Poputka | Shared mobility for Moldova</title>
+  <meta name="description" content="Poputka is a future shared mobility platform connecting drivers and passengers across Moldova with trust, simplicity and everyday reliability.">
   <link rel="canonical" href="https://poputka.md/">
 
-  <!-- Favicon & PWA -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#f8fafc">
 
-  <!-- Open Graph / Twitter (aliniate cu titlu/descriere) -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://poputka.md/">
-  <meta property="og:title" content="Poputka.md — Carpooling în Moldova: conectăm șoferi și pasageri">
-  <meta property="og:description" content="Poputka.md este platforma de carpooling din Moldova. Conectăm șoferii care au locuri libere cu pasagerii care caută rute ieftine și rapide. Simplu, sigur și original.">
+  <meta property="og:title" content="Poputka | Shared mobility for Moldova">
+  <meta property="og:description" content="A smarter way to connect drivers and passengers across Moldova.">
   <meta property="og:image" content="https://poputka.md/android-chrome-512x512.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Poputka.md — Carpooling în Moldova: conectăm șoferi și pasageri">
-  <meta name="twitter:description" content="Poputka.md este platforma de carpooling din Moldova. Conectăm șoferii care au locuri libere cu pasagerii care caută rute ieftine și rapide. Simplu, sigur și original.">
+  <meta name="twitter:title" content="Poputka | Shared mobility for Moldova">
+  <meta name="twitter:description" content="A smarter way to connect drivers and passengers across Moldova.">
   <meta name="twitter:image" content="https://poputka.md/android-chrome-512x512.png">
 
-  <style>
-    :root{ --fg:#0f172a; --muted:#475569; --bg:#f8fafc; --card:#ffffff;
-      --brand:#ef4444; --border:#e2e8f0; --chip:#cbd5e1; }
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto}
-    .wrap{max-width:980px;margin:0 auto;padding:48px 20px}
-    .card{background:var(--card);border-radius:20px;box-shadow:0 10px 30px rgba(2,6,23,.08);padding:32px}
-    h1{font-size:40px;margin:0}
-    h2{font-size:22px;margin:22px 0 8px}
-    p{margin:0 0 14px;color:var(--muted)}
-    .hero{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-    .hero img{width:36px;height:36px;border-radius:8px}
-    .actions{display:grid;grid-template-columns:1fr;gap:14px;margin:16px 0 8px}
-    .btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
-      padding:16px 18px;border-radius:14px;text-decoration:none;border:1px solid var(--border);
-      background:#f1f5f9;color:var(--fg);font-weight:600;box-shadow:0 2px 6px rgba(2,6,23,.04);}
-    .btn.primary{background:var(--brand);color:#fff;border:none}
-    .btn:hover{filter:brightness(0.98)}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px}
-    .box{background:#f1f5f9;border-radius:14px;padding:16px}
-    .road{margin-top:28px}
-    .road ul{margin:8px 0 0 0;padding:0;list-style:none}
-    .road li{background:#ffffff;border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin-top:12px;
-      display:flex;justify-content:space-between;gap:12px;align-items:center;}
-    .tag{font-size:12px;color:#0f172a;background:transparent;border:1px solid var(--chip);
-      border-radius:999px;padding:4px 10px;white-space:nowrap;}
-    .contact{margin-top:20px}
-    .promo{margin:8px 0 12px;overflow:hidden;border:1px solid var(--border);border-radius:14px;background:#e2e8f0}
-    .promo img{display:block;width:100%;height:auto}
-    footer{margin-top:24px;color:var(--muted);font-size:14px}
-    @media (max-width:760px){
-      .wrap{padding:24px 12px}
-      .card{border-radius:16px;padding:20px}
-      .row{grid-template-columns:1fr}
-      h1{font-size:36px}
-      .actions{grid-template-columns:1fr}
-      .promo{margin-left:-8px;margin-right:-8px;border-radius:12px}
-    }
-  </style>
-
-  <!-- Structured data: Website -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebSite","name":"Poputka.md","url":"https://poputka.md/","description":"Platformă de carpooling pentru Moldova."}
-  </script>
-
-  <!-- Structured data: FAQPage (1 Q/A) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "Cum funcționează Poputka.md?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Șoferii postează locurile libere, pasagerii caută ruta dorită, iar aplicația îi conectează instant."
-      }
-    }]
-  }
-  </script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-  <div class="wrap">
-    <div class="card">
-      <div class="hero">
-        <img src="/android-chrome-192x192.png" alt="Poputka logo" width="36" height="36" loading="lazy">
-        <h1>Poputka.md</h1>
-      </div>
-      <p>Poputka.md este prima platformă de carpooling din Moldova. Ajutăm șoferii care au locuri libere să găsească pasageri, iar pasagerii să găsească transport rapid și ieftin. Economisești bani, reduci poluarea și călătorești în siguranță.</p>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Poputka home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Poputka</span>
+    </a>
 
-      <!-- BUTOANE -->
-      <div class="actions">
-        <a class="btn primary"
-           href="mailto:vodnicear@gmail.com?subject=Abonare%20nout%C4%83%C8%9Bi%20Poputka.md&body=Salut!%20Vreau%20s%C4%83%20primesc%20nout%C4%83%C8%9Bi%20despre%20Poputka.md.%20Nume%3A%20_____%20%0AEmail%3A%20_____">
-          Înscrie-te pentru noutăți
-        </a>
-        <a class="btn" href="https://www.facebook.com/poputka.md" target="_blank" rel="noopener">
-          Urmărește-ne pe Facebook
-        </a>
-      </div>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="#vision">Vision</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-      <section class="promo" aria-label="Poputka.md">
-        <img src="assets/poputka.jpg" alt="Automobil Poputka.md în mers">
-      </section>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="eyebrow">Shared mobility for Moldova</p>
+        <h1 id="hero-title">The future of shared mobility starts here.</h1>
+        <p class="hero-text">A smarter way to connect drivers and passengers across Moldova.</p>
 
-      <div class="row">
-        <div class="box">
-          <h2>Status aplicație</h2>
-          <p>Aplicația este în dezvoltare activă (Laravel 12, PostgreSQL + PostGIS, Docker).</p>
-        </div>
-        <div class="box">
-          <h2>Obiectiv</h2>
-          <p>Misiunea noastră este să reinventăm modul în care oamenii călătoresc împreună: să oferim o platformă prin care un pasager să poată fi conectat instant cu o mașină care merge în direcția lui, indiferent dacă se află într-un oraș sau pe marginea drumului. Simplu, original și sigur.</p>
+        <div class="hero-actions" aria-label="Poputka actions">
+          <a class="button primary" href="#vision">Discover Poputka</a>
+          <a class="button secondary" href="mailto:poputka@gmail.com">Contact Us</a>
         </div>
       </div>
 
-      <div class="road">
-        <h2>Ce urmează (Roadmap)</h2>
-        <ul>
-          <li><span>Autentificare web (Breeze) + API tokens (Sanctum)</span> <span class="tag">în lucru</span></li>
-          <li><span>Harta cu locuri & rute (Leaflet + PostGIS)</span> <span class="tag">în lucru</span></li>
-          <li><span>Rezervări & mesagerie între șofer și pasager</span> <span class="tag">următor</span></li>
-          <li><span>Recenzii & sistem de reputație</span> <span class="tag">planificat</span></li>
-          <li><span>„Centrul de Siguranță” (verificări, raportări, reguli)</span> <span class="tag">planificat</span></li>
-          <li><span>Aplicație mobilă (API comun)</span> <span class="tag">planificat</span></li>
-        </ul>
+      <div class="mobility-visual" aria-label="Abstract route across Moldova">
+        <svg viewBox="0 0 560 420" role="img" aria-labelledby="visual-title visual-desc" xmlns="http://www.w3.org/2000/svg">
+          <title id="visual-title">Minimal route illustration</title>
+          <desc id="visual-desc">A calm abstract road with connected locations and a small car.</desc>
+          <path class="map-shape" d="M348 38c55 23 97 71 113 132 18 67-2 139-50 187-45 45-111 60-174 50-68-11-128-48-153-108-25-59-13-134 28-183 54-65 154-111 236-78Z"/>
+          <path class="route-shadow" d="M91 297c67-95 140-142 218-139 62 3 111 36 166 92"/>
+          <path class="route" d="M91 297c67-95 140-142 218-139 62 3 111 36 166 92"/>
+          <circle class="pin pin-a" cx="91" cy="297" r="10"/>
+          <circle class="pin pin-b" cx="309" cy="158" r="10"/>
+          <circle class="pin pin-c" cx="475" cy="250" r="10"/>
+          <g class="car" transform="translate(250 137)">
+            <rect x="0" y="28" width="82" height="30" rx="15"/>
+            <path d="M18 31l13-18h27l15 18H18Z"/>
+            <circle cx="22" cy="61" r="8"/>
+            <circle cx="61" cy="61" r="8"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="section" id="vision" aria-labelledby="vision-title">
+      <div class="section-heading">
+        <p class="eyebrow">Vision</p>
+        <h2 id="vision-title">Built for people. Designed for the future.</h2>
       </div>
 
-      <div class="box contact">
-        <h2>Contact</h2>
-        <p>Scrie-mi direct la <a href="mailto:vodnicear@gmail.com">vodnicear@gmail.com</a>
-        sau deschide un <a href="https://github.com/LEOVODNICEAR/poputka-landing/issues/new" target="_blank" rel="noopener">issue</a> public.</p>
-      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">01</span>
+          <h3>Find a ride</h3>
+          <p>Connect with routes that fit everyday travel across Moldova.</p>
+        </article>
 
-      <footer>
-        © 2025 Poputka.md — <a href="https://www.facebook.com/poputka.md">Facebook</a> |
-        <a href="https://github.com/LEOVODNICEAR/poputka-landing">GitHub</a>
-      </footer>
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">02</span>
+          <h3>Share your journey</h3>
+          <p>Help empty seats become useful, simple and more affordable trips.</p>
+        </article>
+
+        <article class="card">
+          <span class="card-icon" aria-hidden="true">03</span>
+          <h3>Travel with trust</h3>
+          <p>Build every interaction around clarity, reliability and safety.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="statement" aria-labelledby="mission-title">
+      <p class="eyebrow">Mission</p>
+      <h2 id="mission-title">Poputka is building a new generation of shared mobility platform focused on trust, simplicity and everyday travel across Moldova.</h2>
+    </section>
+
+    <section class="section compact" aria-labelledby="future-title">
+      <div class="section-heading">
+        <p class="eyebrow">Future</p>
+        <h2 id="future-title">We're just getting started.</h2>
+      </div>
+      <p class="section-text">More features, more cities and a better way to travel are coming soon.</p>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div>
+        <p class="eyebrow">Partnerships &amp; Investments</p>
+        <h2 id="contact-title">Let's talk about the road ahead.</h2>
+      </div>
+      <p>If you represent an investment fund, a company or you would like to discuss future collaboration, we would be happy to hear from you.</p>
+      <a class="contact-link" href="mailto:poputka@gmail.com">poputka@gmail.com</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <p>Made with <span aria-label="love">❤️</span> in Moldova</p>
+      <p>&copy; <span id="current-year"></span> Poputka. All rights reserved.</p>
     </div>
-  </div>
+    <div class="footer-contact">
+      <p>Partnerships &amp; Investments</p>
+      <a href="mailto:poputka@gmail.com">poputka@gmail.com</a>
+    </div>
+  </footer>
 </body>
 </html>
