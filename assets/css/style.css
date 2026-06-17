@@ -173,197 +173,91 @@ h1 {
   color: var(--text);
 }
 
-.mobility-visual {
+.hero-visual {
+  position: relative;
   width: 100%;
-  max-width: 760px;
+  max-width: 880px;
   margin: 0 auto;
-  overflow: visible;
+  aspect-ratio: 1.45;
+  overflow: hidden;
 }
 
-.mobility-visual svg {
+.hero-road-image {
   display: block;
-  width: 100%;
+  width: 156%;
+  max-width: none;
   height: auto;
+  transform: translateX(-36%);
+  pointer-events: none;
+  user-select: none;
 }
 
-.sun {
-  fill: #f8d98a;
-  opacity: 0.36;
+.floating-pin {
+  position: absolute;
+  width: clamp(16px, 2.2vw, 30px);
+  aspect-ratio: 1;
+  border-radius: 50% 50% 50% 0;
+  background: var(--green);
+  transform: rotate(-45deg);
+  transform-origin: 50% 100%;
+  filter: drop-shadow(0 12px 16px rgba(24, 167, 122, 0.18));
+  pointer-events: none;
 }
 
-.cloud {
-  fill: #c8def3;
-  opacity: 0.24;
+.floating-pin::before {
+  content: "";
+  position: absolute;
+  inset: 28%;
+  border-radius: 50%;
+  background: #ffffff;
 }
 
-.bird {
-  fill: none;
-  opacity: 0.38;
-  stroke: #7aa7d9;
-  stroke-linecap: round;
-  stroke-width: 3;
-}
-
-.city {
-  fill: #9ebce1;
-  opacity: 0.48;
-}
-
-.hill-back {
-  fill: #edf5fb;
-}
-
-.hill-mid {
-  fill: #dcecf3;
-  opacity: 0.7;
-}
-
-.hill-front {
-  fill: #d3e8e8;
-  opacity: 0.78;
-}
-
-.road-outer {
-  fill: #eef6fb;
-  opacity: 0.92;
-}
-
-.road-edge,
-.lane-line {
-  fill: none;
-  opacity: 0.48;
-  stroke: #ffffff;
-  stroke-linecap: round;
-  stroke-width: 8;
-}
-
-.lane-line {
-  opacity: 0.72;
-  stroke-dasharray: 30 34;
-  stroke-width: 9;
-}
-
-.route-line {
-  fill: none;
+.floating-pin::after {
+  content: "";
+  position: absolute;
+  right: 4%;
+  bottom: -18%;
+  width: 110%;
+  height: 34%;
+  border-radius: 50%;
+  background: currentColor;
   opacity: 0.12;
-  stroke: var(--blue);
-  stroke-linecap: round;
-  stroke-width: 3;
-  stroke-dasharray: 7 40;
+  transform: rotate(45deg);
 }
 
-.trees-left,
-.trees-right {
-  fill: none;
-  opacity: 0.55;
-  stroke: #93cdb5;
-  stroke-linecap: round;
-  stroke-width: 4;
-}
-
-.trees-left circle,
-.trees-right circle {
-  fill: #a8dbc1;
-  stroke: none;
-}
-
-.pin-shadow {
-  fill: #2457d6;
-  opacity: 0.13;
-}
-
-.pin-shadow-secondary,
-.pin-shadow-distant {
-  fill: var(--green);
-}
-
-.pin-shadow-city {
-  fill: var(--blue);
-  opacity: 0.11;
-}
-
-.hero-pin {
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-.pin-shape {
-  fill: var(--blue);
-  filter: drop-shadow(0 12px 18px rgba(36, 87, 214, 0.2));
-}
-
-.pin-secondary .pin-shape,
-.pin-distant .pin-shape {
-  fill: var(--green);
-  filter: drop-shadow(0 10px 16px rgba(24, 167, 122, 0.18));
-}
-
-.pin-city .pin-shape {
-  fill: var(--blue);
-  opacity: 0.9;
-}
-
-.pin-hole {
-  fill: #ffffff;
-  opacity: 0.96;
-}
-
-.pin-primary {
+.floating-pin-primary {
+  left: 18%;
+  top: 64%;
+  width: clamp(36px, 5vw, 78px);
+  color: var(--blue);
+  background: var(--blue);
+  filter: drop-shadow(0 16px 24px rgba(36, 87, 214, 0.22));
   animation: pinPrimaryFloat 2.5s ease-in-out infinite;
 }
 
-.pin-secondary {
+.floating-pin-secondary {
+  left: 58%;
+  top: 42%;
+  color: var(--green);
   animation: pinSecondaryFloat 3.5s ease-in-out infinite;
 }
 
-.pin-distant {
-  animation: pinDistantFloat 6s ease-in-out infinite;
+.floating-pin-distant {
+  left: 39%;
+  top: 30%;
+  width: clamp(12px, 1.6vw, 22px);
+  color: var(--green);
+  animation: pinDistantFloat 5.5s ease-in-out infinite;
 }
 
-.car-shadow {
-  fill: #8fa8c5;
-  opacity: 0.2;
-}
-
-.car-body {
-  stroke: #8fa6bf;
-  stroke-width: 2;
-}
-
-.car-window {
-  fill: #0b1a32;
-  opacity: 0.9;
-}
-
-.car-glass {
-  fill: none;
-  opacity: 0.45;
-  stroke: #ffffff;
-  stroke-linecap: round;
-  stroke-width: 3;
-}
-
-.tail-light {
-  fill: none;
-  stroke: #ef5b75;
-  stroke-linecap: round;
-  stroke-width: 5;
-}
-
-.plate {
-  fill: #dce8f5;
-}
-
-.wheel {
-  fill: #0b1220;
-}
-
-.glow {
-  opacity: 0.72;
-}
-
-.car {
-  filter: drop-shadow(0 22px 28px rgba(55, 82, 112, 0.2));
+.floating-pin-city {
+  left: 76%;
+  top: 27%;
+  width: clamp(14px, 1.8vw, 26px);
+  color: var(--blue);
+  background: var(--blue);
+  filter: drop-shadow(0 10px 14px rgba(36, 87, 214, 0.16));
+  animation: pinCityFloat 6s ease-in-out infinite;
 }
 
 .section,
@@ -496,33 +390,44 @@ h3 {
 @keyframes pinPrimaryFloat {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(-45deg);
   }
 
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-12px) rotate(-45deg);
   }
 }
 
 @keyframes pinSecondaryFloat {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(-45deg);
   }
 
   50% {
-    transform: translateY(-6px);
+    transform: translateY(-6px) rotate(-45deg);
   }
 }
 
 @keyframes pinDistantFloat {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(-45deg);
   }
 
   50% {
-    transform: translateY(-3px);
+    transform: translateY(-3px) rotate(-45deg);
+  }
+}
+
+@keyframes pinCityFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+
+  50% {
+    transform: translateY(-3px) rotate(-45deg);
   }
 }
 
@@ -540,10 +445,7 @@ h3 {
     transition-duration: 0.01ms !important;
   }
 
-  .hero-pin,
-  .pin-primary,
-  .pin-secondary,
-  .pin-distant {
+  .floating-pin {
     animation: none !important;
   }
 }
@@ -564,9 +466,9 @@ h3 {
     gap: 28px;
   }
 
-  .mobility-visual {
-    width: min(64vw, 820px);
-    margin-right: max(-7vw, -90px);
+  .hero-visual {
+    width: min(66vw, 980px);
+    margin-right: max(-13vw, -180px);
   }
 
   .cards {
@@ -590,7 +492,7 @@ h3 {
     padding: 44px 0 58px;
   }
 
-  .mobility-visual {
+  .hero-visual {
     max-width: 100%;
     margin-top: 6px;
   }
