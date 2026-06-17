@@ -186,11 +186,13 @@ h1 {
 }
 
 .hero-road-image {
+  --hero-artwork-transform: translate(-35%, -5%);
   display: block;
   width: 154%;
   max-width: none;
   height: auto;
-  transform: translate(-35%, -5%);
+  animation: heroFloat 9s ease-in-out infinite;
+  transform: var(--hero-artwork-transform) translateY(0);
   pointer-events: none;
   user-select: none;
 }
@@ -322,6 +324,17 @@ h3 {
   text-decoration: none;
 }
 
+@keyframes heroFloat {
+  0%,
+  100% {
+    transform: var(--hero-artwork-transform) translateY(0);
+  }
+
+  50% {
+    transform: var(--hero-artwork-transform) translateY(-6px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -334,6 +347,10 @@ h3 {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .hero-road-image {
+    animation: none !important;
   }
 }
 
@@ -387,8 +404,8 @@ h3 {
   }
 
   .hero-road-image {
+    --hero-artwork-transform: translate(-34%, -4%);
     width: 150%;
-    transform: translate(-34%, -4%);
   }
 
   .section,
